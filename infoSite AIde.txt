@@ -1,1 +1,10 @@
 https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/
+
+
+https://github.com/Baeldung/spring-security-registration/blob/master/src/main/java/org/baeldung/service/IUserService.java
+
+
+http://javamind-fr.blogspot.com/2014/11/securiser-une-application-avec-spring.html
+
+
+http://blog.invivoo.com/securiser-application-spring-boot-spring-security/
