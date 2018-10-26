@@ -7,11 +7,24 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.access.AccessDeniedHandler;
+
+import com.example.tpSpringBootJeuVideo.Service.UserService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfiguration
 {
+	@Autowired
+	UserService userService;
+	
+	@Autowired
+	private AccessDeniedHandler accessDeniedHandler;
+	
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userService);
+    }
+	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
 	{

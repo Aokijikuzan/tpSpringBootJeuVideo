@@ -5,15 +5,18 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name="USER")
 public class User implements Serializable ,UserDetails{
 
@@ -93,5 +96,12 @@ public class User implements Serializable ,UserDetails{
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + "]";
 	}
+
+	public User orElseThrow(Object object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }
